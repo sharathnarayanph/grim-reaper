@@ -1,0 +1,526 @@
+skeleton.png
+animations: 17
+moveUp
+frames: 9
+frame
+clip: 15 521 39 55
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 77 522 40 53
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 142 520 39 55
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 208 521 36 58
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 267 520 43 56
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 333 521 46 56
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 393 519 49 59
+offset: 0 0
+duration: 0.5
+index: 6
+frame
+clip: 459 523 45 56
+offset: 0 0
+duration: 0.5
+index: 7
+frame
+clip: 521 522 46 56
+offset: 0 0
+duration: 0.5
+index: 8
+moveDown
+frames: 9
+frame
+clip: 12 650 43 54
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 78 648 46 56
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 141 650 40 57
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 200 651 47 55
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 269 651 46 55
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 329 647 49 59
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 393 649 49 56
+offset: 0 0
+duration: 0.5
+index: 6
+frame
+clip: 457 646 50 63
+offset: 0 0
+duration: 0.5
+index: 7
+frame
+clip: 519 651 50 56
+offset: 0 0
+duration: 0.5
+index: 8
+moveLeft
+frames: 9
+frame
+clip: 9 585 48 56
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 75 589 54 56
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 139 586 47 60
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 202 584 55 58
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 262 586 55 57
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 327 585 50 56
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 393 585 55 56
+offset: 0 0
+duration: 0.5
+index: 6
+frame
+clip: 455 586 55 57
+offset: 0 0
+duration: 0.5
+index: 7
+frame
+clip: 522 587 53 59
+offset: 0 0
+duration: 0.5
+index: 8
+moveRight
+frames: 9
+frame
+clip: 13 710 56 63
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 75 715 56 60
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 140 712 55 59
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 198 711 69 66
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 263 713 63 61
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 327 714 61 61
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 391 713 55 59
+offset: 0 0
+duration: 0.5
+index: 6
+frame
+clip: 456 713 59 57
+offset: 0 0
+duration: 0.5
+index: 7
+frame
+clip: 522 713 58 63
+offset: 0 0
+duration: 0.5
+index: 8
+idleUp
+frames: 7
+frame
+clip: 13 13 48 54
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 71 9 56 60
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 137 9 54 59
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 203 12 55 57
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 259 9 61 62
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 324 10 62 59
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 393 7 58 60
+offset: 0 0
+duration: 0.5
+index: 6
+idleDown
+frames: 7
+frame
+clip: 12 132 51 64
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 70 136 64 58
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 136 133 59 63
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 196 135 63 63
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 257 134 66 62
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 324 139 71 61
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 390 137 69 64
+offset: 0 0
+duration: 0.5
+index: 6
+idleLeft
+frames: 7
+frame
+clip: 12 75 52 56
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 78 73 61 64
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 137 74 58 62
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 205 75 54 58
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 267 74 63 61
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 324 75 65 57
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 390 74 71 58
+offset: 0 0
+duration: 0.5
+index: 6
+idleRight
+frames: 7
+frame
+clip: 10 198 65 64
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 74 201 55 61
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 135 202 66 61
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 197 201 66 57
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 262 203 71 58
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 324 198 71 63
+offset: 0 0
+duration: 0.5
+index: 5
+frame
+clip: 389 200 70 59
+offset: 0 0
+duration: 0.5
+index: 6
+stabUp
+frames: 6
+frame
+clip: 9 778 54 58
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 72 779 61 56
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 136 780 56 53
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 201 776 64 61
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 262 779 66 61
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 328 780 64 61
+offset: 0 0
+duration: 0.5
+index: 5
+stabDown
+frames: 6
+frame
+clip: 10 905 64 60
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 73 904 60 66
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 134 907 62 58
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 200 902 62 67
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 264 902 60 68
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 329 904 62 63
+offset: 0 0
+duration: 0.5
+index: 5
+stabLeft
+frames: 6
+frame
+clip: 6 840 64 61
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 68 842 57 59
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 135 840 61 64
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 190 839 61 61
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 247 838 72 66
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 313 837 77 68
+offset: 0 0
+duration: 0.5
+index: 5
+stabRight
+frames: 6
+frame
+clip: 9 970 60 59
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 71 971 65 63
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 135 970 60 56
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 201 970 66 63
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 261 966 72 61
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 328 968 67 55
+offset: 0 0
+duration: 0.5
+index: 5
+hitUp
+frames: 1
+frame
+clip: 328 1031 61 65
+offset: 0 0
+duration: 0.5
+index: 0
+hitDown
+frames: 1
+frame
+clip: 330 1160 58 65
+offset: 0 0
+duration: 0.5
+index: 0
+hitLeft
+frames: 1
+frame
+clip: 391 1093 62 66
+offset: 0 0
+duration: 0.5
+index: 0
+hitRight
+frames: 1
+frame
+clip: 391 1221 69 66
+offset: 0 0
+duration: 0.5
+index: 0
+die
+frames: 6
+frame
+clip: 12 1288 61 60
+offset: 0 0
+duration: 0.5
+index: 0
+frame
+clip: 71 1287 73 66
+offset: 0 0
+duration: 0.5
+index: 1
+frame
+clip: 137 1291 58 68
+offset: 0 0
+duration: 0.5
+index: 2
+frame
+clip: 199 1295 58 55
+offset: 0 0
+duration: 0.5
+index: 3
+frame
+clip: 262 1298 63 52
+offset: 0 0
+duration: 0.5
+index: 4
+frame
+clip: 324 1303 72 57
+offset: 0 0
+duration: 0.5
+index: 5
