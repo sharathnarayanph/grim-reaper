@@ -1,6 +1,6 @@
 #include "globals.h"
 
-const double Globals::PI = 3.14159;
+const float Globals::PI = 3.14159;
 
 //useful for me as a dev
 bool Globals::debugging = true;

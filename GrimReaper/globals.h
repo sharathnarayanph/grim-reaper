@@ -9,7 +9,7 @@
 class Globals{
 public:
 	//math helpers
-	static const double PI;
+	static const float PI;
 
 	//useful for me as a dev
 	static bool debugging;

@@ -18,6 +18,12 @@
     <ClCompile Include="drawing_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="randomNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -25,12 +31,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cleanup.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="globals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,13 +41,13 @@
     <ClInclude Include="drawing_functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="randomNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="res_path.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
