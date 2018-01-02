@@ -75,11 +75,13 @@
     <ClCompile Include="drawing_functions.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="time_state.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="drawing_functions.h" />
     <ClInclude Include="globals.h" />
+    <ClInclude Include="time_state.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
