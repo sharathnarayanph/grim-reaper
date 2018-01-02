@@ -72,19 +72,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cleanup.cpp" />
     <ClCompile Include="drawing_functions.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="randomNumber.cpp" />
-    <ClCompile Include="res_path.cpp" />
+    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cleanup.h" />
     <ClInclude Include="drawing_functions.h" />
     <ClInclude Include="globals.h" />
-    <ClInclude Include="randomNumber.h" />
-    <ClInclude Include="res_path.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

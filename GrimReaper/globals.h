@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 #include <SDL.h>
-#include "randomNumber.h"
+#include "util.h"
 
 class Globals{
 public:
