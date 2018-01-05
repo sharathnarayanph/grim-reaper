@@ -75,6 +75,7 @@
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="animationSet.cpp" />
     <ClCompile Include="drawing_functions.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="frame.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="frame_set_util.cpp" />
@@ -85,6 +86,7 @@
   <ItemGroup>
     <ClInclude Include="animation.h" />
     <ClInclude Include="animationSet.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="frame.h" />
     <ClInclude Include="frame_set_type.h" />
     <ClInclude Include="drawing_functions.h" />
