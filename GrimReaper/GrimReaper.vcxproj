@@ -84,11 +84,11 @@
     <ClInclude Include="drawing_functions.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="frame_set.h" />
-    <ClInclude Include="groupBox.h" />
+    <ClInclude Include="frame_set_rect.h" />
     <ClInclude Include="groupBuilder.h" />
-    <ClInclude Include="groupNumber.h" />
-    <ClInclude Include="groupPosition.h" />
-    <ClInclude Include="groupString.h" />
+    <ClInclude Include="frame_set_val.h" />
+    <ClInclude Include="frame_set_pos.h" />
+    <ClInclude Include="frame_set_field.h" />
     <ClInclude Include="time_state.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
