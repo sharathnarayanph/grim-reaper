@@ -33,6 +33,9 @@
     <ClCompile Include="frame_set_util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="drawing_functions.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frame_set_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

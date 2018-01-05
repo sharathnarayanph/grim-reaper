@@ -73,6 +73,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="drawing_functions.cpp" />
+    <ClCompile Include="frame.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="frame_set_util.cpp" />
     <ClCompile Include="main.cpp" />
@@ -80,6 +81,7 @@
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="frame.h" />
     <ClInclude Include="frame_set_type.h" />
     <ClInclude Include="drawing_functions.h" />
     <ClInclude Include="globals.h" />
