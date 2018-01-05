@@ -9,15 +9,15 @@
 #include <SDL.h>
 #include "frame_set_type.h"
 
-class FrameSet{
+class FrameSet {
 public:
 	FrameSetType type;
 
-	FrameSet(){
+	FrameSet() {
 
 	}
 
-	FrameSet(FrameSetType type){
+	FrameSet(FrameSetType type) {
 		this->type = type;
 	}
 
