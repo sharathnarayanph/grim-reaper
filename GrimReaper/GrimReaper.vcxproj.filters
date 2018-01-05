@@ -30,7 +30,7 @@
     <ClCompile Include="time_state.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="groupBuilder.cpp">
+    <ClCompile Include="frame_set_util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,9 +45,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="time_state.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="groupBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frame_set_type.h">
@@ -66,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frame_set_field.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frame_set_util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

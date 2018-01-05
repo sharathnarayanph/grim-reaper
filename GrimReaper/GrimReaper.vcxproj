@@ -74,7 +74,7 @@
   <ItemGroup>
     <ClCompile Include="drawing_functions.cpp" />
     <ClCompile Include="globals.cpp" />
-    <ClCompile Include="groupBuilder.cpp" />
+    <ClCompile Include="frame_set_util.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="time_state.cpp" />
     <ClCompile Include="util.cpp" />
@@ -85,7 +85,7 @@
     <ClInclude Include="globals.h" />
     <ClInclude Include="frame_set.h" />
     <ClInclude Include="frame_set_rect.h" />
-    <ClInclude Include="groupBuilder.h" />
+    <ClInclude Include="frame_set_util.h" />
     <ClInclude Include="frame_set_val.h" />
     <ClInclude Include="frame_set_pos.h" />
     <ClInclude Include="frame_set_field.h" />
