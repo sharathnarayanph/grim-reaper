@@ -30,6 +30,9 @@
     <ClCompile Include="time_state.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="groupBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="drawing_functions.h">
@@ -42,6 +45,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="time_state.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="groupString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="groupPosition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="groupNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="groupBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="groupBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frame_set_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frame_set.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

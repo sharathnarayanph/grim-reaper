@@ -74,13 +74,21 @@
   <ItemGroup>
     <ClCompile Include="drawing_functions.cpp" />
     <ClCompile Include="globals.cpp" />
+    <ClCompile Include="groupBuilder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="time_state.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="frame_set_type.h" />
     <ClInclude Include="drawing_functions.h" />
     <ClInclude Include="globals.h" />
+    <ClInclude Include="frame_set.h" />
+    <ClInclude Include="groupBox.h" />
+    <ClInclude Include="groupBuilder.h" />
+    <ClInclude Include="groupNumber.h" />
+    <ClInclude Include="groupPosition.h" />
+    <ClInclude Include="groupString.h" />
     <ClInclude Include="time_state.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
