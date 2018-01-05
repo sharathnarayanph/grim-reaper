@@ -1,5 +1,5 @@
-#ifndef FRAME
-#define FRAME
+#ifndef FRAME_H
+#define FRAME_H
 
 #include <iostream>
 #include <list>
