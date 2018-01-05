@@ -14,6 +14,8 @@ public:
 	Frame *getNextFrame(Frame* frame);
 	int getEndFrameNumber(); 
 	Frame* getFrame(int frameNumber); 
+
+	void loadAnimation(std::ifstream &file, std::list<FrameSetType> &types);
 };
 
 #endif

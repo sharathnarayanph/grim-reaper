@@ -20,6 +20,8 @@ public:
 	std::list<FrameSet*> frameData;
 
 	void Draw(SDL_Texture* spriteSheet, float x, float y);
+
+	void loadFrame(std::ifstream &file, std::list<FrameSetType> &types);
 };
 
 #endif

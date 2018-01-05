@@ -33,3 +33,20 @@ Frame* Animation::getFrame(int frameNumber) {
 
 	return frame;
 }
+
+void Animation::loadAnimation(std::ifstream &file, list<FrameSetType> &types) {
+	getline(file, name);
+	std::string buffer;
+	getline(file, buffer);
+	std::stringstream ss;
+	buffer = Globals::clipOffDataHeader(buffer);
+	ss << buffer;
+	int numberOfFrames;
+	ss >> numberOfFrames;
+
+	for (int i = 0; i < numberOfFrames; i++) {
+		Frame newFrame;
+		newFrame.loadFrame(file, types);
+		frames.push_back(newFrame);
+	}
+}
