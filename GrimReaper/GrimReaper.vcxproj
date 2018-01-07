@@ -84,6 +84,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="time_state.cpp" />
     <ClCompile Include="util.cpp" />
+    <ClCompile Include="arena.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
@@ -103,6 +104,7 @@
     <ClInclude Include="living_entity.h" />
     <ClInclude Include="time_state.h" />
     <ClInclude Include="util.h" />
+    <ClInclude Include="arena.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

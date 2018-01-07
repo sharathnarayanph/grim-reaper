@@ -51,6 +51,9 @@
     <ClCompile Include="hero.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="arena.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="drawing_functions.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="hero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="arena.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
