@@ -1,21 +1,21 @@
 #include "skeleton.h"
 
-const string Skeleton::SKELETON_ANIM_UP = "up";
-const string Skeleton::SKELETON_ANIM_DOWN = "down";
-const string Skeleton::SKELETON_ANIM_LEFT = "left";
-const string Skeleton::SKELETON_ANIM_RIGHT = "right";
+const string Skeleton::SKELETON_ANIM_UP = "moveUp";
+const string Skeleton::SKELETON_ANIM_DOWN = "moveDown";
+const string Skeleton::SKELETON_ANIM_LEFT = "moveLeft";
+const string Skeleton::SKELETON_ANIM_RIGHT = "moveRight";
 const string Skeleton::SKELETON_ANIM_IDLE_UP = "idleUp";
 const string Skeleton::SKELETON_ANIM_IDLE_DOWN = "idleDown";
 const string Skeleton::SKELETON_ANIM_IDLE_LEFT = "idleLeft";
 const string Skeleton::SKELETON_ANIM_IDLE_RIGHT = "idleRight";
-const string Skeleton::SKELETON_ANIM_ATTACK_UP = "attackUp";
-const string Skeleton::SKELETON_ANIM_ATTACK_DOWN = "attackDown";
-const string Skeleton::SKELETON_ANIM_ATTACK_LEFT = "attackLeft";
-const string Skeleton::SKELETON_ANIM_ATTACK_RIGHT = "attackRight";
-const string Skeleton::SKELETON_ANIM_TELEGRAPH_UP = "telegraphUp";
-const string Skeleton::SKELETON_ANIM_TELEGRAPH_DOWN = "telegraphDown";
-const string Skeleton::SKELETON_ANIM_TELEGRAPH_LEFT = "telegraphLeft";
-const string Skeleton::SKELETON_ANIM_TELEGRAPH_RIGHT = "telegraphRight";
+const string Skeleton::SKELETON_ANIM_ATTACK_UP = "stabUp";
+const string Skeleton::SKELETON_ANIM_ATTACK_DOWN = "stabDown";
+const string Skeleton::SKELETON_ANIM_ATTACK_LEFT = "stabLeft";
+const string Skeleton::SKELETON_ANIM_ATTACK_RIGHT = "stabRight";
+const string Skeleton::SKELETON_ANIM_TELEGRAPH_UP = "hitUp";
+const string Skeleton::SKELETON_ANIM_TELEGRAPH_DOWN = "hitDown";
+const string Skeleton::SKELETON_ANIM_TELEGRAPH_LEFT = "hitLeft";
+const string Skeleton::SKELETON_ANIM_TELEGRAPH_RIGHT = "hitRight";
 const string Skeleton::SKELETON_ANIM_DIE = "die";
 
 const int Skeleton::SKELETON_STATE_IDLE = 0;

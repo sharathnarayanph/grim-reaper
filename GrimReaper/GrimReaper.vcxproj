@@ -78,7 +78,7 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="frame.cpp" />
     <ClCompile Include="game.cpp" />
-    <ClCompile Include="glob.cpp" />
+    <ClCompile Include="skeleton.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="frame_set_util.cpp" />
     <ClCompile Include="hero.cpp" />

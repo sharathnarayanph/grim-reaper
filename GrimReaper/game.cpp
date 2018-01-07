@@ -26,6 +26,9 @@ Game::Game() {
 	heroAnimSet = new AnimationSet();
 	heroAnimSet->loadAnimationSet("grimReaper.fdset", fsTypes, true, 0, true);
 
+	skeletonAnimSet = new AnimationSet();
+	skeletonAnimSet->loadAnimationSet("skeleton.fdset", fsTypes, true, 0, true);
+
 	wallAnimSet = new AnimationSet();
 	wallAnimSet->loadAnimationSet("arena.fdset", fsTypes);
 
@@ -80,13 +83,18 @@ Game::~Game() {
 
 	delete heroAnimSet;
 	delete wallAnimSet;
+	delete skeletonAnimSet;
 
 	delete hero;
 
 	Entity::removeAllFromList(&walls, true);
+	Entity::removeAllFromList(&enemies, true); 
 }
 
 void Game::update() {
+	int enemiesToBuild = 2;
+	int enemiesBuilt = 0;
+	float enemyBuildTimer = 1;
 	bool quit = false;
 
 	SDL_Event e;
@@ -96,6 +104,7 @@ void Game::update() {
 		TimeState::timeState.updateTime();
 
 		Entity::removeInactiveEntitiesFromList(&Entity::entities, false);
+		Entity::removeInactiveEntitiesFromList(&enemies, true);
 
 		while (SDL_PollEvent(&e)) {
 			if (e.type == SDL_QUIT)
@@ -118,6 +127,26 @@ void Game::update() {
 		//Update Entities
 		for (list<Entity*>::iterator entity = Entity::entities.begin(); entity != Entity::entities.end(); entity++) {
 			(*entity)->update();
+		}
+
+		//Spawn skeletons
+		if (hero->hp > 0){
+			if (enemiesToBuild == enemiesBuilt){
+				enemiesToBuild = enemiesToBuild * 2;
+				enemiesBuilt = 0;
+				enemyBuildTimer = 4;
+			}
+			enemyBuildTimer -= TimeState::timeState.dT;
+			if (enemyBuildTimer <= 0 && enemiesBuilt < enemiesToBuild && enemies.size() < 10){
+				Skeleton *enemy = new Skeleton(skeletonAnimSet);
+				//Set enemies position in arena
+				enemy->x = getRandomNumber(Globals::ScreenWidth - (2 * 32) - 32) + 32 + 16;
+				enemy->y = getRandomNumber(Globals::ScreenHeight - (2 * 32) - 32) + 32 + 16;
+				enemy->invincibleTimer = 0.1;
+
+				enemies.push_back(enemy);
+				Entity::entities.push_back(enemy);
+			}
 		}
 
 		draw();
