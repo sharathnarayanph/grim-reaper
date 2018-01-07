@@ -87,39 +87,45 @@ void Entity::updateCollisionBox() {
 }
 
 void Entity::updateCollisions() {
-	if (active && collideWithSolids && (moveSpeed > 0 || slideAmount > 0)) {
-		//List of potential collisions
+	if (active && collideWithSolids && (moveSpeed > 0 || slideAmount > 0)){
+		//list of potential collisions
 		list<Entity*> collisions;
 
-		for (auto entity = Entity::entities.begin(); entity != Entity::entities.end(); entity++) {
-			//If the main entity collides with the current entity, add to list
-			if ((*entity)->active 
-				&& (*entity)->type != this->type 
-				&& (*entity)->solid 
-				&& Entity::checkCollision(collisionBox, (*entity)->collisionBox)) {
+		//list<Entity*>::iterator entity = ...
+		for (auto entity = Entity::entities.begin(); entity != Entity::entities.end(); entity++){
+			//if we collide with this entity with our currently unioned collisionbox, add to the list
+			if ((*entity)->active
+				&& (*entity)->type != this->type
+				&& (*entity)->solid
+				&& Entity::checkCollision(collisionBox, (*entity)->collisionBox)){
 
+				//add it to the list
 				collisions.push_back(*entity);
 
 			}
 		}
-		//If collision available, perform collision resolution
+		//if we have a list of potential entities we may hit, then lets check them properly to do collision resolution
 		if (collisions.size() > 0){
 			updateCollisionBox();
 
-			//Sample distance between collision entities
+			//multisample check for collisions from where we started to where we are planning to go to
+
+			//first we are going to find the sample distance we should travel between checks
 			float boxTravelSize = 0;
 			if (collisionBox.w < collisionBox.h)
 				boxTravelSize = collisionBox.w / 4;
 			else
 				boxTravelSize = collisionBox.h / 4;
 
-			//Use sampleBox to check for collisions from start point to end point
+			//use sampleBox to check for collisions from start point to end point, moving at boxTravelSize each sample
 			SDL_Rect sampleBox = lastCollisionBox;
+			float collisionMoveX = sampleBox.x, collisionMoveY = sampleBox.y;
+
 			float movementAngle = Entity::angleBetweenTwoRects(lastCollisionBox, collisionBox);
 
-			bool foundCollision = false; 
+			bool foundCollision = false;
 			while (!foundCollision){
-				//Check samplebox for collisions where it is now
+				//check samplebox for collisions where it is now
 				SDL_Rect intersection;
 				for (auto entity = collisions.begin(); entity != collisions.end(); entity++){
 					if (SDL_IntersectRect(&sampleBox, &(*entity)->collisionBox, &intersection))
@@ -129,41 +135,46 @@ void Entity::updateCollisions() {
 						moving = false;
 						slideAngle = angleBetweenTwoEntities((*entity), this);
 
-						//Collision resolution with currently colliding entity
-						//Resolve collision based on the lowest value of height or width
-						if (intersection.w < intersection.h) {
+						//currently intersecting a entity, now we need to do collsion resolution
+						if (intersection.w < intersection.h){
 							if (lastCollisionBox.x + lastCollisionBox.w / 2 < (*entity)->collisionBox.x + (*entity)->collisionBox.w / 2)
-								sampleBox.x -= intersection.w; 
+								sampleBox.x -= intersection.w; //started on left, so move left out of collision
 							else
-								sampleBox.x += intersection.w; 
+								sampleBox.x += intersection.w; //otherwise, started on right
 						}
-						else {
+						else{
 							if (lastCollisionBox.y + lastCollisionBox.h / 2 < (*entity)->collisionBox.y + (*entity)->collisionBox.h / 2)
-								sampleBox.y -= intersection.h; 
+								sampleBox.y -= intersection.h; //started abovem so move up out of collision
 							else
-								sampleBox.y += intersection.h; 
+								sampleBox.y += intersection.h; //otherwise, started below
 						}
 					}
 				}
 
-				//If collision and sample box at same place, exit loop
+				//if collisionsfound or sampleBox is at same place as collisionBox, exit loop
 				if (foundCollision || (sampleBox.x == collisionBox.x && sampleBox.y == collisionBox.y))
 					break;
 
-				//Move sample box up to check the next spot
-				if (distanceBetweenTwoRects(sampleBox, collisionBox) > boxTravelSize) {
+				//move sample box up to check the next spot
+				if (distanceBetweenTwoRects(sampleBox, collisionBox) > boxTravelSize){
+					movementAngle = Entity::angleBetweenTwoRects(sampleBox, collisionBox);
 					float xMove = boxTravelSize * (cos(movementAngle*Globals::PI / 180));
 					float yMove = boxTravelSize * (sin(movementAngle * Globals::PI / 180));
 
-					sampleBox.x += xMove;
-					sampleBox.y += yMove;
+					//Fix for float values below 1 e.g 0.71 being truncated to sampleBox.x as thats an int
+					collisionMoveX += xMove;
+					collisionMoveY += yMove;
+					sampleBox.x = collisionMoveX;
+					sampleBox.y = collisionMoveY;
+
 				}
-				else {
+				else{
 					sampleBox = collisionBox;
 				}
 			}
-			
-			if (foundCollision) {
+
+			if (foundCollision){
+				//move our entity to where the sampleBox ended up
 				slideAmount = slideAmount / 2;
 				x = sampleBox.x + sampleBox.w / 2;
 				y = sampleBox.y - collisionBoxYOffset;

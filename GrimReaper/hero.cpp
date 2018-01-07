@@ -1,22 +1,41 @@
 #include "hero.h"
 
-const string Hero::HERO_ANIM_UP = "moveUp";
-const string Hero::HERO_ANIM_DOWN = "moveDown";
-const string Hero::HERO_ANIM_LEFT = "moveLeft";
-const string Hero::HERO_ANIM_RIGHT = "moveRight";
+//const string Hero::HERO_ANIM_UP = "moveUp";
+//const string Hero::HERO_ANIM_DOWN = "moveDown";
+//const string Hero::HERO_ANIM_LEFT = "moveLeft";
+//const string Hero::HERO_ANIM_RIGHT = "moveRight";
+//const string Hero::HERO_ANIM_IDLE_UP = "idleUp";
+//const string Hero::HERO_ANIM_IDLE_DOWN = "idleDown";
+//const string Hero::HERO_ANIM_IDLE_LEFT = "idleUp";
+//const string Hero::HERO_ANIM_IDLE_RIGHT = "idleUp";
+//const string Hero::HERO_SLASH_ANIM_UP = "slashUp";
+//const string Hero::HERO_SLASH_ANIM_DOWN = "slashDown";
+//const string Hero::HERO_SLASH_ANIM_LEFT = "slashLeft";
+//const string Hero::HERO_SLASH_ANIM_RIGHT = "slashRight";
+//const string Hero::HERO_DASH_ANIM_UP = "hitUp";
+//const string Hero::HERO_DASH_ANIM_DOWN = "hitDown";
+//const string Hero::HERO_DASH_ANIM_LEFT = "hitLeft";
+//const string Hero::HERO_DASH_ANIM_RIGHT = "hitRight";
+//const string Hero::HERO_ANIM_DIE = "die";
+
+const string Hero::HERO_ANIM_UP = "up";
+const string Hero::HERO_ANIM_DOWN = "down";
+const string Hero::HERO_ANIM_LEFT = "left";
+const string Hero::HERO_ANIM_RIGHT = "right";
 const string Hero::HERO_ANIM_IDLE_UP = "idleUp";
 const string Hero::HERO_ANIM_IDLE_DOWN = "idleDown";
-const string Hero::HERO_ANIM_IDLE_LEFT = "idleUp";
-const string Hero::HERO_ANIM_IDLE_RIGHT = "idleUp";
+const string Hero::HERO_ANIM_IDLE_LEFT = "idleLeft";
+const string Hero::HERO_ANIM_IDLE_RIGHT = "idleRight";
 const string Hero::HERO_SLASH_ANIM_UP = "slashUp";
 const string Hero::HERO_SLASH_ANIM_DOWN = "slashDown";
 const string Hero::HERO_SLASH_ANIM_LEFT = "slashLeft";
 const string Hero::HERO_SLASH_ANIM_RIGHT = "slashRight";
-const string Hero::HERO_DASH_ANIM_UP = "hitUp";
-const string Hero::HERO_DASH_ANIM_DOWN = "hitDown";
-const string Hero::HERO_DASH_ANIM_LEFT = "hitLeft";
-const string Hero::HERO_DASH_ANIM_RIGHT = "hitRight";
+const string Hero::HERO_DASH_ANIM_UP = "dashUp";
+const string Hero::HERO_DASH_ANIM_DOWN = "dashDown";
+const string Hero::HERO_DASH_ANIM_LEFT = "dashLeft";
+const string Hero::HERO_DASH_ANIM_RIGHT = "dashRight";
 const string Hero::HERO_ANIM_DIE = "die";
+
 
 const int Hero::HERO_STATE_IDLE = 0;
 const int Hero::HERO_STATE_MOVE = 1;
@@ -196,7 +215,9 @@ void Hero::updateDamages() {
 			if ((*entity)->active && (*entity)->type == "enemy") {
 				LivingEntity* enemy = (LivingEntity*)(*entity);
 
-				if (enemy->damage > 0 && Entity::checkCollision(collisionBox, enemy->hitBox)) {
+				bool isCheck = Entity::checkCollision(collisionBox, enemy->hitBox);
+
+				if (isCheck && enemy->damage > 0) {
 					hp -= enemy->damage;
 
 					if (hp > 0) {

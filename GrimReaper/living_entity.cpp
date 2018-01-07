@@ -27,8 +27,12 @@ void LivingEntity::updateInvincibleTimer() {
 }
 
 void LivingEntity::draw() {
-	if (currentFrame != NULL && active) 
-		currentFrame->Draw(animSet->spriteSheet, x, y);
+	if (currentFrame != NULL && active){
+		if (invincibleTimer > 0 && animSet->whiteSpriteSheet != NULL)
+			currentFrame->Draw(animSet->whiteSpriteSheet, x, y);
+		else
+			currentFrame->Draw(animSet->spriteSheet, x, y);
+	}
 
 	//Draw collsionBox
 	if (solid && Globals::debugging) {

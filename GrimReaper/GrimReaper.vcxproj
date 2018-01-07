@@ -85,6 +85,7 @@
     <ClCompile Include="game_controls.cpp" />
     <ClCompile Include="living_entity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="soundManager.cpp" />
     <ClCompile Include="time_state.cpp" />
     <ClCompile Include="util.cpp" />
     <ClCompile Include="arena.cpp" />
@@ -108,6 +109,7 @@
     <ClInclude Include="hero.h" />
     <ClInclude Include="game_controls.h" />
     <ClInclude Include="living_entity.h" />
+    <ClInclude Include="sound_manager.h" />
     <ClInclude Include="time_state.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="arena.h" />
