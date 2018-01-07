@@ -77,9 +77,11 @@
     <ClCompile Include="drawing_functions.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="frame.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="frame_set_util.cpp" />
     <ClCompile Include="hero.cpp" />
+    <ClCompile Include="game_controls.cpp" />
     <ClCompile Include="living_entity.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="time_state.cpp" />
@@ -93,6 +95,7 @@
     <ClInclude Include="frame.h" />
     <ClInclude Include="frame_set_type.h" />
     <ClInclude Include="drawing_functions.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="frame_set.h" />
     <ClInclude Include="frame_set_rect.h" />
@@ -101,6 +104,7 @@
     <ClInclude Include="frame_set_pos.h" />
     <ClInclude Include="frame_set_field.h" />
     <ClInclude Include="hero.h" />
+    <ClInclude Include="game_controls.h" />
     <ClInclude Include="living_entity.h" />
     <ClInclude Include="time_state.h" />
     <ClInclude Include="util.h" />
