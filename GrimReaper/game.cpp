@@ -3,6 +3,11 @@
 Game::Game() {
 	string resPath = getResourcePath();
 	backgroundImage = loadTexture(resPath + "map.png", Globals::renderer);
+	splashImage = loadTexture(resPath + "cyborgtitle.png", Globals::renderer);
+	overlayImage = loadTexture(resPath + "overlay.png", Globals::renderer);
+
+	splashShowing = true;
+	overlayTimer = 2;
 
 	list<FrameSetType> fsTypes;
 
@@ -78,6 +83,11 @@ Game::Game() {
 
 Game::~Game() {
 	cleanup(backgroundImage);
+	cleanup(splashImage);
+	cleanup(overlayImage);
+
+	if (scoreTexture != NULL)
+		cleanup(scoreTexture);
 
 	Entity::removeAllFromList(&Entity::entities, false);
 
@@ -116,12 +126,38 @@ void Game::update() {
 					quit = true;
 					break;
 				case SDL_SCANCODE_SPACE:
-					hero->revive();
+					if (splashShowing)
+						splashShowing = false;
+					if (overlayTimer <= 0 && hero->hp < 1){
+						//Clean and restart
+						enemiesToBuild = 2;
+						enemiesBuilt = 0;
+						enemyBuildTimer = 3;
+						overlayTimer = 2;
+
+						Skeleton::killCnt = 0;
+
+						if (scoreTexture != NULL){
+							cleanup(scoreTexture);
+							scoreTexture = NULL;
+						}
+
+						//Remove existing enemies
+						for (list<Entity*>::iterator enemy = enemies.begin(); enemy != enemies.end(); enemy++){
+							(*enemy)->active = false;
+						}
+						hero->revive();
+					}
+
 					break;
 
 				}
 			}
 			heroInput.update(&e);
+		}
+
+		if (hero->hp < 1 && overlayTimer > 0){
+			overlayTimer -= TimeState::timeState.dT;
 		}
 
 		//Update Entities
@@ -130,7 +166,7 @@ void Game::update() {
 		}
 
 		//Spawn skeletons
-		if (hero->hp > 0){
+		if (hero->hp > 0 && !splashShowing){
 			if (enemiesToBuild == enemiesBuilt){
 				enemiesToBuild = enemiesToBuild * 2;
 				enemiesBuilt = 0;
@@ -158,14 +194,33 @@ void Game::draw() {
 	SDL_SetRenderDrawColor(Globals::renderer, 145, 133, 129, SDL_ALPHA_OPAQUE);
 	SDL_RenderClear(Globals::renderer);
 
-	renderTexture(backgroundImage, Globals::renderer, 0, 0);
-
-	//Sort entries based on y axis depth
-	Entity::entities.sort(Entity::EntityCompare);
-
-	for (list<Entity*>::iterator entity = Entity::entities.begin(); entity != Entity::entities.end(); entity++) {
-		(*entity)->draw();
+	if (splashShowing){
+		renderTexture(splashImage, Globals::renderer, 0, 0);
 	}
+	else {
+		renderTexture(backgroundImage, Globals::renderer, 0, 0);
 
+		//Sort entries based on y axis depth
+		Entity::entities.sort(Entity::EntityCompare);
+
+		for (list<Entity*>::iterator entity = Entity::entities.begin(); entity != Entity::entities.end(); entity++) {
+			(*entity)->draw();
+		}
+
+		if (overlayTimer <= 0 && hero->hp < 1){
+			renderTexture(overlayImage, Globals::renderer, 0, 0);
+			if (scoreTexture == NULL){
+				//Score 
+				SDL_Color color = { 255, 255, 255, 255 };
+
+				stringstream ss;
+				ss << "Souls reaped: " << Skeleton::killCnt;
+
+				string resPath = getResourcePath();
+				scoreTexture = renderText(ss.str(), resPath + "vermin_vibes_1989.ttf", color, 30, Globals::renderer);
+			}
+			renderTexture(scoreTexture, Globals::renderer, 20, 50);
+		}
+	}
 	SDL_RenderPresent(Globals::renderer);
 }

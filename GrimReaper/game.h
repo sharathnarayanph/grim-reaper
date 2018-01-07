@@ -16,10 +16,16 @@ public:
 	AnimationSet* skeletonAnimSet;
 	AnimationSet* wallAnimSet;
 	SDL_Texture* backgroundImage;
+	SDL_Texture* splashImage;
+	SDL_Texture* overlayImage;
+	SDL_Texture* scoreTexture = NULL;
 	Hero *hero;
 	GameControls heroInput;
 	list<Entity*> walls;
 	list<Entity*> enemies;
+
+	bool splashShowing;
+	float overlayTimer;
 
 	void update();
 	void draw();
