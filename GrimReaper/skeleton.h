@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include "living_entity.h"
+#include "sound_manager.h"
 
 class Skeleton : public LivingEntity {
 public:

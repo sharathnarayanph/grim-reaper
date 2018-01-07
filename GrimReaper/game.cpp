@@ -2,12 +2,23 @@
 
 Game::Game() {
 	string resPath = getResourcePath();
-	backgroundImage = loadTexture(resPath + "map.png", Globals::renderer);
-	splashImage = loadTexture(resPath + "cyborgtitle.png", Globals::renderer);
+	backgroundImage = loadTexture(resPath + "hell.png", Globals::renderer);
+	splashImage = loadTexture(resPath + "grimReaperTitle.png", Globals::renderer);
 	overlayImage = loadTexture(resPath + "overlay.png", Globals::renderer);
 
 	splashShowing = true;
 	overlayTimer = 2;
+
+	SoundManager::soundManager.loadSound("hit", resPath + "hit.wav");
+	SoundManager::soundManager.loadSound("enemyHit", resPath + "enemyHit.wav");
+	SoundManager::soundManager.loadSound("swing", resPath + "swing.wav");
+	SoundManager::soundManager.loadSound("dash", resPath + "dash.wav");
+	SoundManager::soundManager.loadSound("growl", resPath + "growl.wav");
+	SoundManager::soundManager.loadSound("enemyDie", resPath + "enemyDie.wav");
+
+	song = Mix_LoadMUS(string(resPath + "GrimTheEvil.wav").c_str());
+	if (song != NULL)
+		Mix_PlayMusic(song, -1);
 
 	list<FrameSetType> fsTypes;
 
@@ -88,6 +99,9 @@ Game::~Game() {
 
 	if (scoreTexture != NULL)
 		cleanup(scoreTexture);
+
+	Mix_PausedMusic();
+	Mix_FreeMusic(song);
 
 	Entity::removeAllFromList(&Entity::entities, false);
 

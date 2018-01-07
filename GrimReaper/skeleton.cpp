@@ -162,7 +162,8 @@ void Skeleton::die() {
 	state = SKELETON_STATE_DEAD;
 	Skeleton::killCnt++;
 
-	changeAnimation(state, true);	
+	changeAnimation(state, true);
+	SoundManager::soundManager.playSound("enemyDie");
 }
 
 void Skeleton::findNearestTarget() {
@@ -284,7 +285,7 @@ void Skeleton::updateDamages() {
 					hp -= enemy->damage;
 
 					if (hp > 0){
-						//TODO play hurt sound
+						SoundManager::soundManager.playSound("enemyHit");
 						invincibleTimer = 0.1;
 					}
 					//Angle between entities

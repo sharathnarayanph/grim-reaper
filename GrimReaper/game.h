@@ -7,11 +7,13 @@
 #include "arena.h"
 #include "game_controls.h"
 #include "drawing_functions.h"
+#include "sound_manager.h"
 
 class Game {
 public:
 	Game();
 
+	Mix_Music* song;
 	AnimationSet* heroAnimSet;
 	AnimationSet* skeletonAnimSet;
 	AnimationSet* wallAnimSet;
