@@ -1,9 +1,14 @@
+#include <cstdlib>
+#include <ctime> 
 #include "util.h"
 #include "drawing_functions.h"
 #include "SDL_mixer.h"
 #include "globals.h"
+#include "game.h"
 
 int main(int argc, char **agv){
+
+	srand(time(0));
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
 		cout << "error initialising SDL" << endl;
@@ -48,23 +53,11 @@ int main(int argc, char **agv){
 		return 1;
 	}
 
-
-	string resPath = getResourcePath();
-	SDL_Texture* texture = loadTexture(resPath + "map.png", Globals::renderer);
-
-
-	while (SDL_GetTicks() < 5000){
-
-		SDL_RenderClear(Globals::renderer);
-
-		renderTexture(texture, Globals::renderer, 0, 0);
-
-		SDL_RenderPresent(Globals::renderer);
-	}
+	Game game;
+	game.update();
 
 	cleanup(Globals::renderer);
 	cleanup(window);
-	cleanup(texture);
 
 	SDL_Quit();
 	return 0;

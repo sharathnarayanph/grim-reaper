@@ -161,6 +161,10 @@ void Hero::updateAnimation() {
 		changeAnimation(HERO_STATE_IDLE, true);
 	}
 
+	if (state != HERO_STATE_MOVE && moving) {
+		changeAnimation(HERO_STATE_MOVE, true);
+	}
+
 	frameTimer += TimeState::timeState.dT;
 
 	if (frameTimer >= currentFrame->duration) {

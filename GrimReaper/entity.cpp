@@ -203,7 +203,8 @@ float Entity::angleBetweenTwoEntities(Entity *e1, Entity *e2) {
 }
 
 bool Entity::checkCollision(SDL_Rect cbox1, SDL_Rect cbox2) {
-	if (SDL_IntersectRect(&cbox1, &cbox2, nullptr))
+	SDL_Rect intersection;
+	if (SDL_IntersectRect(&cbox1, &cbox2, &intersection))
 		return true;
 
 	return false;

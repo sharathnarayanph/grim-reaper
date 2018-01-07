@@ -78,6 +78,7 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="frame.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="glob.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="frame_set_util.cpp" />
     <ClCompile Include="hero.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="frame_set_type.h" />
     <ClInclude Include="drawing_functions.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="skeleton.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="frame_set.h" />
     <ClInclude Include="frame_set_rect.h" />

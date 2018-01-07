@@ -29,7 +29,7 @@ void AnimationSet::loadAnimationSet(string fileName, list<FrameSetType> &groupTy
 		{
 			SDL_Surface* spriteSurface = loadSurface(resPath + imageName, Globals::renderer);
 
-			//for transparency, we will grab the [transparentPixelIndex] from the surface we just made
+			//For transparency, we will grab the [transparentPixelIndex] from the surface we just made
 			SDL_Color* transparentPixel = &spriteSurface->format->palette->colors[transparentPixelIndex];
 			SDL_SetColorKey(spriteSurface, 1, SDL_MapRGB(spriteSurface->format, transparentPixel->r, transparentPixel->g, transparentPixel->b));
 
