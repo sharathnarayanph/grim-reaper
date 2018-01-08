@@ -19,8 +19,13 @@ INSTALLATION (WINDOWS):
 CONTROLS:
 
 Move Up - Up arrow
+
 Move Down - Down arrow
+
 Move Left - Left arrow
+
 Move Right - Right arrow
+
 Attack - Z
+
 Dash - X
